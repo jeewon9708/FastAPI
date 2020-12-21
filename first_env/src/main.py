@@ -12,7 +12,7 @@ from models import MyException, Configuration, Index
 
 #fastAPI 인스턴스 생성
 app=FastAPI(title='SMART Science Application',description='A Smart Data Science Application running on FastAPi + uvicorn',version = '0.0.1')
-
+#change
 #index를 get해서(required!) 
 @app.get("/{index}")
 async def get_result(index: Index = Path(..., title="The name of the Index")
