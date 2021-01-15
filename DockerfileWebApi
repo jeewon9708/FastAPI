@@ -1,0 +1,15 @@
+FROM tiangolo/uvicorn-gunicorn:python3.8
+
+LABEL maintainer="Jitendra Singh <jitendra.singh.iitg@gmail.com>"
+
+COPY requirements_webapi.txt /requirements.txt
+RUN pip install -r /requirements.txt
+
+
+COPY req1.txt /req.txt
+RUN pip install -r /req.txt
+COPY req2.txt /req2.txt
+RUN pip install -r /req2.txt
+COPY ./app /app
+#COPY ./celery /app/celery_tasks
+#WORKDIR /app

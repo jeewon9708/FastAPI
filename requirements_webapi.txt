@@ -1,0 +1,8 @@
+aiofiles==0.5.0
+fastapi==0.60.1
+celery==4.4.7
+rabbitmq
+tensorflow-cpu
+keras
+python-multipart
+pillow

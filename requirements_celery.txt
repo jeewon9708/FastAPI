@@ -1,0 +1,6 @@
+celery==4.4.7
+rabbitmq
+tensorflow-cpu
+keras
+python-multipart
+pillow

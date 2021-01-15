@@ -1,0 +1,16 @@
+FROM python:3.6
+
+LABEL maintainer="Jitendra Singh <jitendra.singh.iitg@gmail.com>"
+
+COPY requirements_celery.txt /requirements.txt
+RUN pip install -r /requirements.txt
+COPY req1.txt /req.txt
+RUN pip install -r /req.txt
+
+#COPY ./app/worker.py /celery_tasks/app/
+COPY ./celery /celery_tasks
+WORKDIR /celery_tasks
+COPY req2.txt /req2.txt
+RUN pip install -r /req2.txt
+
+ENTRYPOINT celery -A tasks worker --pool gevent --loglevel=info
